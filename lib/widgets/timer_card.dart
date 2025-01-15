@@ -19,7 +19,7 @@ class TimerCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             MyCard(
-              text: '2',
+              text: '25',
             ),
             const SizedBox(width: 10),
             Text(
@@ -28,7 +28,7 @@ class TimerCard extends StatelessWidget {
             ),
             const SizedBox(width: 10),
             MyCard(
-              text: '59',
+              text: '00',
             ),
           ],
         ),

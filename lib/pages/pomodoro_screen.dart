@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pomodoro/utils/utils.dart';
+import 'package:pomodoro/widgets/time_options.dart';
 import 'package:pomodoro/widgets/timer_card.dart';
 
 class PomodoroScreen extends StatelessWidget {
@@ -27,11 +28,13 @@ class PomodoroScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Center(
           child: Column(
             children: [
               TimerCard(),
+              SizedBox(height: 40),
+              TimeOptions(),
             ],
           ),
         ),

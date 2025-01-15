@@ -13,3 +13,17 @@ TextStyle myTextStyle(
     fontWeight: fontWeight,
   );
 }
+
+List<String> selectableTimes = [
+  '300',
+  '600',
+  '900',
+  '1200',
+  '1500',
+  '1800',
+  '2100',
+  '2400',
+  '2700',
+  '3000',
+  '3300',
+];
