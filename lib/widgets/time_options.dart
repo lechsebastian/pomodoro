@@ -11,7 +11,7 @@ class TimeOptions extends StatelessWidget {
     final int selectedIndex = selectableTimes.indexOf(selectedTime.toString());
     final double screenWidth = MediaQuery.of(context).size.width;
     final double initialScrollOffset =
-        (selectedIndex * (70 + 20)) - (screenWidth / 2) + (70 / 2);
+        (selectedIndex * (70 + 20)) - (screenWidth / 2) + (70 / 2) + 10;
 
     return SingleChildScrollView(
       controller: ScrollController(initialScrollOffset: initialScrollOffset),
