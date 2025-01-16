@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:pomodoro/timer_service.dart';
 import 'package:pomodoro/utils/utils.dart';
 import 'package:pomodoro/widgets/my_card.dart';
+import 'package:provider/provider.dart';
 
 class TimerCard extends StatelessWidget {
   const TimerCard({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<TimerService>(context);
+
     return Column(
       children: [
         const SizedBox(height: 20),
@@ -19,7 +23,7 @@ class TimerCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             MyCard(
-              text: '25',
+              text: (provider.currentDuration ~/ 60).toString(),
             ),
             const SizedBox(width: 10),
             Text(
@@ -28,7 +32,8 @@ class TimerCard extends StatelessWidget {
             ),
             const SizedBox(width: 10),
             MyCard(
-              text: '00',
+              text: ((provider.currentDuration).toInt() % 60 < 10 ? '0' : '') +
+                  ((provider.currentDuration).toInt() % 60).toString(),
             ),
           ],
         ),
