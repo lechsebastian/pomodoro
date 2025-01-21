@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:pomodoro/utils/utils.dart';
 
@@ -19,7 +21,7 @@ class MyCard extends StatelessWidget {
             color: Colors.grey.withOpacity(0.5),
             blurRadius: 4,
             spreadRadius: 4,
-            offset: Offset(0, 2),
+            offset: const Offset(0, 2),
           ),
         ],
       ),

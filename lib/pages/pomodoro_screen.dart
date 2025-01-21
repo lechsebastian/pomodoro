@@ -30,16 +30,16 @@ class PomodoroScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Center(
           child: Column(
             children: [
-              const TimerCard(),
-              const SizedBox(height: 60),
+              TimerCard(),
+              SizedBox(height: 60),
               TimeOptions(),
-              const SizedBox(height: 120),
-              const TimeController(),
-              const SizedBox(height: 60),
+              SizedBox(height: 120),
+              TimeController(),
+              SizedBox(height: 60),
               Progress(),
             ],
           ),

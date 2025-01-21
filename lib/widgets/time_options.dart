@@ -4,7 +4,7 @@ import 'package:pomodoro/utils/utils.dart';
 import 'package:provider/provider.dart';
 
 class TimeOptions extends StatelessWidget {
-  TimeOptions({super.key});
+  const TimeOptions({super.key});
 
   @override
   Widget build(BuildContext context) {
