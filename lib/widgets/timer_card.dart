@@ -15,7 +15,7 @@ class TimerCard extends StatelessWidget {
       children: [
         const SizedBox(height: 20),
         Text(
-          'FOCUS',
+          provider.currentState,
           style: myTextStyle(35, Colors.white, FontWeight.w700),
         ),
         const SizedBox(height: 30),

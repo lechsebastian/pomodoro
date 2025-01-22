@@ -4,9 +4,12 @@ import 'package:flutter/material.dart';
 
 class TimerService extends ChangeNotifier {
   late Timer timer;
-  double currentDuration = 1500;
-  double selectedTime = 1500;
+  double currentDuration = 10;
+  double selectedTime = 10;
   bool timerPlaying = false;
+  int rounds = 0;
+  int goals = 0;
+  String currentState = 'FOCUS';
 
   void selectTime(double seconds) {
     selectedTime = seconds;
@@ -21,9 +24,7 @@ class TimerService extends ChangeNotifier {
         currentDuration--;
         notifyListeners();
       } else {
-        timer.cancel();
-        timerPlaying = false;
-        notifyListeners();
+        hanldeNextRound();
       }
     });
   }
@@ -31,6 +32,38 @@ class TimerService extends ChangeNotifier {
   void pauseTimer() {
     timer.cancel();
     timerPlaying = false;
+    notifyListeners();
+  }
+
+  void hanldeNextRound() {
+    switch (currentState) {
+      case "FOCUS":
+        if (rounds != 3) {
+          currentState = 'BREAK';
+          currentDuration = 5;
+          selectedTime = 5;
+          rounds++;
+          goals++;
+        } else {
+          currentState = 'LONGBREAK';
+          currentDuration = 10;
+          selectedTime = 10;
+          rounds++;
+          goals++;
+        }
+        break;
+      case "BREAK":
+        currentState = 'FOCUS';
+        currentDuration = 10;
+        selectedTime = 10;
+        break;
+      case "LONGBREAK":
+        currentState = 'FOCUS';
+        currentDuration = 10;
+        selectedTime = 10;
+        rounds = 0;
+        break;
+    }
     notifyListeners();
   }
 }
