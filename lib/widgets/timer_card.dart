@@ -28,7 +28,8 @@ class TimerCard extends StatelessWidget {
             const SizedBox(width: 10),
             Text(
               ':',
-              style: myTextStyle(60, Colors.red.shade200, FontWeight.bold),
+              style: myTextStyle(60,
+                  renderSecondaryColor(provider.currentState), FontWeight.bold),
             ),
             const SizedBox(width: 10),
             MyCard(

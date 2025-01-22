@@ -27,3 +27,27 @@ List<String> selectableTimes = [
   '3000',
   '3300',
 ];
+
+Color renderPrimaryColor(String currentState) {
+  switch (currentState) {
+    case 'FOCUS':
+      return Colors.redAccent;
+    case 'BREAK':
+    case 'LONGBREAK':
+      return Colors.lightBlueAccent;
+    default:
+      return Colors.redAccent;
+  }
+}
+
+Color renderSecondaryColor(String currentState) {
+  switch (currentState) {
+    case 'FOCUS':
+      return Colors.red.shade200;
+    case 'BREAK':
+    case 'LONGBREAK':
+      return Colors.lightBlue.shade200;
+    default:
+      return Colors.red.shade200;
+  }
+}

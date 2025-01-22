@@ -1,7 +1,9 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:pomodoro/timer_service.dart';
 import 'package:pomodoro/utils/utils.dart';
+import 'package:provider/provider.dart';
 
 class MyCard extends StatelessWidget {
   String text;
@@ -10,6 +12,8 @@ class MyCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<TimerService>(context);
+
     return Container(
       width: MediaQuery.of(context).size.width / 3.2,
       height: 170,
@@ -28,7 +32,8 @@ class MyCard extends StatelessWidget {
       child: Center(
         child: Text(
           text,
-          style: myTextStyle(70, Colors.redAccent, FontWeight.bold),
+          style: myTextStyle(
+              70, renderPrimaryColor(provider.currentState), FontWeight.bold),
         ),
       ),
     );
