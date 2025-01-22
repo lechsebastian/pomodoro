@@ -8,15 +8,12 @@ class TimeOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final int selectedIndex = selectableTimes.indexOf('1500');
     final double screenWidth = MediaQuery.of(context).size.width;
-    final double initialScrollOffset =
-        (selectedIndex * (70 + 20)) - (screenWidth / 2) + (70 / 2) + 10;
 
     final provider = Provider.of<TimerService>(context);
 
     return SingleChildScrollView(
-      controller: ScrollController(initialScrollOffset: initialScrollOffset),
+      controller: ScrollController(initialScrollOffset: provider.setInitialOffset(screenWidth)),
       scrollDirection: Axis.horizontal,
       child: Row(
         children: selectableTimes.map((time) {
